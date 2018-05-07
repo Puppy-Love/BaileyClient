@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+
+    <com.qmuiteam.qmui.widget.QMUIAppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.qmuiteam.qmui.widget.QMUITopBar
+            android:id="@+id/top_bar"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_height="?attr/qmui_topbar_height"
+            app:qmui_topbar_bg_color="@color/white" />
+
+        <com.qmuiteam.qmui.widget.QMUITabSegment
+            android:id="@+id/tabSegment"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:tabBackground="?attr/tabBackground"
+            app:tabGravity="fill"
+            app:tabIndicatorColor="?attr/tabIndicatorColor"
+            app:tabMode="scrollable" />
+    </com.qmuiteam.qmui.widget.QMUIAppBarLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+</LinearLayout>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--super text view-->
+    <item name="sLeftViewId" type="id" />
+    <item name="sCenterViewId" type="id" />
+    <item name="sRightViewId" type="id" />
+    <item name="sLeftImgId" type="id" />
+    <item name="sRightImgId" type="id" />
+    <item name="sRightCheckBoxId" type="id" />
+    <item name="sRightSwitchId" type="id" />
+
+    <item name="act_login_et_user" type="id" />
+    <item name="act_login_et_psw" type="id" />
+    <item name="top_bar" type="id" />
+    <item name="act_login_txt_forget_psw" type="id" />
+    <item name="act_login_btn_login" type="id" />
+    <item name="act_login_bar_right_txt" type="id" />
+    <item name="act_login_bar_left_btn" type="id" />
+    <item name="act_register_step" type="id" />
+    <item name="act_register_pager" type="id" />
+    <item name="fgm_ca_et_user" type="id" />
+    <item name="fgm_ca_et_psw" type="id" />
+    <item name="fgm_ca_et_again_psw" type="id" />
+    <item name="fgm_ca_et_phone" type="id" />
+    <item name="fgm_ca_et_pin" type="id" />
+    <item name="fgm_ca_txt_get_pin" type="id" />
+    <item name="fgm_ca_btn_next" type="id" />
+    <item name="fgm_ii_et_name" type="id" />
+    <item name="fgm_ii_et_sex" type="id" />
+    <item name="fgm_ii_et_card" type="id" />
+    <item name="fgm_ii_et_address" type="id" />
+    <item name="fgm_ii_btn_next" type="id" />
+    <item name="fgm_ii_btn_skip" type="id" />
+    <item name="fgm_pi_et_cardholder_name" type="id" />
+    <item name="fgm_pi_et_bank_card" type="id" />
+    <item name="fgm_pi_et_bank_name" type="id" />
+    <item name="fgm_pi_et_bank_branch" type="id" />
+    <item name="fgm_pi_et_pay_psw" type="id" />
+    <item name="fgm_pi_et_pay_psw_again" type="id" />
+    <item name="act_main_tab_pager" type="id" />
+    <item name="act_main_tab_segment" type="id" />
+    <item name="fgm_home_float_layout" type="id" />
+    <item name="fgm_home_iv_apply_qr" type="id" />
+    <item name="fgm_me_tv_avatar" type="id" />
+    <item name="fgm_me_tv_qr" type="id" />
+    <item name="fgm_me_tv_record" type="id" />
+    <item name="fgm_me_tv_bank_card" type="id" />
+    <item name="fgm_me_tv_id_card" type="id" />
+    <item name="fgm_me_tv_service" type="id" />
+    <item name="fgm_me_tv_logout" type="id" />
+    <item name="fgm_wealth_left_btn" type="id" />
+    <item name="fgm_wealth_refresh" type="id" />
+    <item name="fgm_wealth_recycler" type="id" />
+    <item name="fgm_wealth_tv_all_record" type="id" />
+    <item name="fgm_wealth_top_money" type="id" />
+
+    <item name="act_personal_details_back" type="id" />
+    <item name="act_pd_tv_avatar" type="id" />
+    <item name="act_pd_tv_account" type="id" />
+    <item name="act_pd_tv_nickname" type="id" />
+    <item name="act_pd_tv_phone" type="id" />
+    <item name="act_pd_tv_email" type="id" />
+    <item name="act_pd_tv_login_psw" type="id" />
+    <item name="act_pd_tv_pay_psw" type="id" />
+
+    <item name="act_edit_back" type="id" />
+    <item name="act_edit_finish" type="id" />
+    <item name="act_um_back" type="id" />
+    <item name="act_um_et_address" type="id" />
+    <item name="act_um_txt_get_pin" type="id" />
+    <item name="act_um_et_pin" type="id" />
+    <item name="act_um_btn_next" type="id" />
+
+    <item name="act_up_back" type="id" />
+    <item name="act_up_et_pin" type="id" />
+    <item name="act_up_txt_get_pin" type="id" />
+    <item name="act_up_et_phone" type="id" />
+    <item name="act_up_btn_next" type="id" />
+
+    <item name="act_us_back" type="id" />
+    <item name="act_us_right" type="id" />
+    <item name="act_us_tv_suc" type="id" />
+    <item name="act_us_iv_suc" type="id" />
+    <item name="act_us_tv_info" type="id" />
+
+
+    <item name="act_upsw_et_again" type="id" />
+    <item name="act_upsw_et_new" type="id" />
+    <item name="act_upsw_et_old" type="id" />
+    <item name="act_upsw_back" type="id" />
+    <item name="act_upsw_btn_ok" type="id" />
+
+
+    <item name="act_bkl_back" type="id" />
+    <item name="act_bkl_refresh" type="id" />
+    <item name="act_bkl_recycler" type="id" />
+
+    <item name="act_bkd_back" type="id" />
+    <item name="act_bkd_more" type="id" />
+
+    <item name="act_add_bkc_back" type="id" />
+    <item name="act_add_bkc_branch" type="id" />
+    <item name="act_add_bkc_num" type="id" />
+    <item name="act_add_bkc_name" type="id" />
+    <item name="act_add_bkc_account" type="id" />
+    <item name="act_add_bkc_ok" type="id" />
+
+    <item name="act_rm_back" type="id" />
+    <item name="act_rm_location" type="id" />
+    <item name="act_rm_name" type="id" />
+    <item name="act_rm_card" type="id" />
+    <item name="act_rm_tv_card" type="id" />
+    <item name="act_rm_sex" type="id" />
+    <item name="act_rm_ok" type="id" />
+
+    <item name="act_qp_btn_ok" type="id" />
+    <item name="act_qp_back" type="id" />
+    <item name="act_qp_tv_num" type="id" />
+    <item name="act_qp_rlt_num" type="id" />
+    <item name="act_qp_iv_pay_type" type="id" />
+    <item name="act_qp_rlt_pay_type" type="id" />
+
+    <item name="act_spq_back" type="id" />
+    <item name="act_spq_more" type="id" />
+
+    <item name="act_pc_iv_back" type="id" />
+    <item name="act_pc_iv_complete" type="id" />
+    <item name="act_pc_iv_tips" type="id" />
+    <item name="act_pc_tv_tips" type="id" />
+
+</resources>

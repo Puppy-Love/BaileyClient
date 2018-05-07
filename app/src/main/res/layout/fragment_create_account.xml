@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:orientation="vertical">
+
+        <android.support.design.widget.TextInputLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp">
+
+            <EditText
+                android:id="@id/fgm_ca_et_user"
+                style="@style/EtLogin"
+                android:layout_weight="1"
+                android:hint="@string/ca_user" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp">
+
+            <EditText
+                android:id="@id/fgm_ca_et_psw"
+                style="@style/EtLogin"
+                android:layout_weight="1"
+                android:inputType="textPassword"
+                android:hint="@string/ca_login_psw" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp">
+
+            <EditText
+                android:id="@id/fgm_ca_et_again_psw"
+                style="@style/EtLogin"
+                android:inputType="textPassword"
+                android:layout_weight="1"
+                android:hint="@string/ca_again_psw" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp">
+
+            <EditText
+                android:id="@id/fgm_ca_et_phone"
+                style="@style/EtLogin"
+                android:layout_weight="1"
+                android:hint="@string/ca_phone" />
+        </android.support.design.widget.TextInputLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="20dp">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="9">
+
+                <EditText
+                    android:id="@id/fgm_ca_et_pin"
+                    style="@style/EtLogin"
+                    android:layout_weight="1"
+                    android:hint="@string/ca_pin" />
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:id="@id/fgm_ca_txt_get_pin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="3"
+                android:gravity="right"
+                android:text="@string/ca_get_pin"
+                android:textColor="@color/get_pin_txt" />
+        </LinearLayout>
+
+
+        <!--<com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton-->
+            <!--android:id="@id/fgm_ca_btn_next"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:layout_marginTop="40dp"-->
+            <!--android:clickable="true"-->
+            <!--android:padding="10dp"-->
+            <!--android:text="@string/next"-->
+            <!--android:textColor="@android:color/white"-->
+            <!--app:qmui_backgroundColor="@color/login_btn"-->
+            <!--app:qmui_borderColor="@color/login_btn"-->
+            <!--app:qmui_radius="4dp" />-->
+
+        <com.min.bailey.client.mvp.ui.widget.supertextview.SuperButton
+            android:id="@id/fgm_ca_btn_next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/next"
+            android:layout_marginTop="40dp"
+            android:textColor="@color/white"
+            app:sSelectorNormalColor="@color/login_btn"
+            app:sSelectorPressedColor="@color/login_btn_press"
+            app:sUseSelector="true"
+            app:sCornersRadius="4dp"/>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimaryDark_below_23">#000000</color>
+    <color name="colorPrimaryDark_23">#ededed</color>
+
+    <color name="colorPrimary">#ffffff</color>
+    <color name="colorPrimaryLite">#bf000000</color>
+    <color name="window_background">#f1f1f1</color>
+    <color name="colorPrimaryDark">@color/colorPrimaryDark_below_23</color>
+    <color name="colorControlNormal">#000000</color>
+    <color name="colorAccent">#123123</color>
+    <color name="immersive_bars">#ff292929</color>
+
+    <!--default colorful-->
+    <color name="toolbarBackground">@color/white</color>
+    <color name="toolbarTextColor">@android:color/black</color>
+    <color name="toolbarMenuTint">@android:color/black</color>
+    <color name="tabIndicatorColor">@android:color/black</color>
+    <color name="tabBackground">@color/toolbarBackground</color>
+    <color name="tabTextColor">@color/toolbarTextColor</color>
+    <color name="overflowHeaderColor">@color/window_background</color>
+    <color name="line_divider">#E5E0E0</color>
+
+
+    <!--默认的编辑框hint颜色-->
+    <color name="et_default_hint">#9B9B9B</color>
+    <color name="et_default_txt">#FF44444D</color>
+    <color name="login_right_txt">#5490E4</color>
+    <color name="login_btn">#5490E4</color>
+    <color name="login_btn_press">#805490E4</color>
+    <color name="login_btn_disable">#405490E4</color>
+    <color name="next_btn">#665490E4</color>
+    <!--step控件指示器颜色-->
+    <color name="uncompleted_color">#4DFFFFFF</color>
+    <color name="uncompleted_text_color">#FF707175</color>
+    <color name="completed_color">#FF528DE0</color>
+    <color name="completed_text_color">#FFFFFFFF</color>
+    <!--注册bar颜色-->
+    <color name="register_bar">#FF33353A</color>
+    <color name="tab_middle_text_color">#FF33353A</color>
+    <color name="tab_middle_text_tips_color">#FFCACACA</color>
+    <color name="tab_text_note_color">#FF9B9B9B</color>
+    <color name="text_right_color">#FF35373C</color>
+    <!--获取验证码字体颜色-->
+    <color name="get_pin_txt">#FF5490E4</color>
+    <color name="skip_border_color">#FFEDEDED</color>
+    <color name="main_tab_color">#FF5490E4</color>
+    <color name="main_bg_color">#FFF7F8FA</color>
+    <color name="top_title_color">#FF33353A</color>
+
+    <!-- 白色 -->
+    <color name="white">#FFFFFFFF</color>
+    <color name="common_pressed">#20000000</color>  <!--白色背景按下去的颜色-->
+    <color name="line">#e8e8e8</color>
+
+
+
+</resources>

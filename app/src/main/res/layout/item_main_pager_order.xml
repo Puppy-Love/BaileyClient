@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="5dp">
+
+    <TextView
+        android:id="@+id/item_tv_dot"
+        android:layout_width="13dp"
+        android:layout_height="13dp"
+        android:layout_alignParentStart="true"
+        android:layout_gravity="center"
+        android:text="・"
+        android:textColor="#ffcacaca"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/item_tv_type_money"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/item_tv_dot"
+        android:text="付款 ￥25332"
+        android:textColor="@color/tab_middle_text_color"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/item_tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="1分钟前"
+        android:textColor="@color/tab_middle_text_tips_color"
+        android:textSize="12sp" />
+</RelativeLayout>
+
