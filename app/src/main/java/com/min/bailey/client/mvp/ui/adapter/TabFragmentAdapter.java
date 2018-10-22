@@ -1,6 +1,5 @@
 package com.min.bailey.client.mvp.ui.adapter;
 
-import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -8,7 +7,6 @@ import android.support.v4.app.FragmentPagerAdapter;
 import com.min.bailey.client.mvp.ui.fragment.GirlItemFragment;
 import com.min.bailey.client.mvp.ui.fragment.MeiZhiFragment;
 import com.min.bailey.client.mvp.ui.fragment.WallpaperSortFragment;
-
 
 import java.util.ArrayList;
 

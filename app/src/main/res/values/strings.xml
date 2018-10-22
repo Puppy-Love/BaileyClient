@@ -87,5 +87,12 @@
     <string name="title_transaction_details">交易详情</string>
     <string name="title_all_record">全部记录</string>
     <string name="del_suc">删除成功</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+    <string-array name="share_type">
+        <item>纯文本</item>
+        <item>仿锤子便签</item>
+    </string-array>
+
 
 </resources>

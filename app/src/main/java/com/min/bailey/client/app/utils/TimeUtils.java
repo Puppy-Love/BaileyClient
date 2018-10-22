@@ -1498,4 +1498,27 @@ public final class TimeUtils {
         }
         return sb.toString();
     }
+
+    /**
+     * 获取当前时间在某段时间内的百分比位置
+     *
+     * @param beginTime 开始时间
+     * @param endTime   结束时间
+     * @return
+     */
+    public static float getTimeDiffPercent(String beginTime, String endTime) {
+        SimpleDateFormat df = new SimpleDateFormat("HH:mm");
+        Date now = null;
+        Date begin = null;
+        Date end = null;
+        try {
+            now = df.parse(df.format(new Date()));
+            begin = df.parse(beginTime);
+            end = df.parse(endTime);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return (float) (now.getTime() - begin.getTime()) / (float) (end.getTime() - begin.getTime());
+    }
+
 }

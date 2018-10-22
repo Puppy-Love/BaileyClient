@@ -75,4 +75,9 @@
         <item name="android:backgroundDimEnabled">true</item>
         <item name="android:backgroundDimAmount">0.6</item>
     </style>
+
+    <style name="HintErrorAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/colorGray</item>
+        <item name="textColorError">@android:color/holo_red_dark</item>
+    </style>
 </resources>

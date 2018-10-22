@@ -20,4 +20,8 @@ public interface Constant {
      * 妹子页面页数
      */
     int NUMBER_OF_PAGE = 10;
+    /**
+     * Description: 首页
+     */
+    String SPLASH_IMAGE_URL = "http://gank.io/api/data/%E7%A6%8F%E5%88%A9/1/1";
 }

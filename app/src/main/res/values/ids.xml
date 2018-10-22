@@ -128,4 +128,10 @@
     <item name="act_pc_iv_tips" type="id" />
     <item name="act_pc_tv_tips" type="id" />
 
+    <item type="id" name="swipe_container"/>
+    <item type="id" name="navigation_item_1"/>
+    <item type="id" name="navigation_item_2"/>
+    <item type="id" name="navigation_item_3"/>
+    <item type="id" name="navigation_item_4"/>
+
 </resources>

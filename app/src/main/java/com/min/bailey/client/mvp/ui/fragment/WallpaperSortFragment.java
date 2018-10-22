@@ -22,6 +22,7 @@ import com.min.bailey.client.di.module.WallpaperSortModule;
 import com.min.bailey.client.mvp.contract.WallpaperSortContract;
 import com.min.bailey.client.mvp.presenter.WallpaperSortPresenter;
 import com.min.bailey.client.mvp.ui.adapter.WallpaperSortAdapter;
+import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -59,11 +60,35 @@ public class WallpaperSortFragment extends BaseFragment<WallpaperSortPresenter> 
         return inflater.inflate(R.layout.fragment_wallpaper_sort, container, false);
     }
 
+//    @Override
+//    public void onCreate(@Nullable Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        isCreated = true;
+//    }
+
     @Override
     public void initData(@Nullable Bundle savedInstanceState) {
         mPresenter.initAdapter();
         mPresenter.getSort();
     }
+//
+//    protected boolean isCreated = false;
+//
+//    /**
+//     * @param isVisibleToUser
+//     */
+//    @Override
+//    public void setUserVisibleHint(boolean isVisibleToUser) {
+//        super.setUserVisibleHint(isVisibleToUser);
+//        if (!isCreated) {
+//            return;
+//        }
+//        if (isVisibleToUser) {
+//            // 沉浸式状态栏
+//            QMUIStatusBarHelper.translucent(getActivity());
+//            QMUIStatusBarHelper.setStatusBarLightMode(getActivity());
+//        }
+//    }
 
     /**
      * 通过此方法可以使 Fragment 能够与外界做一些交互和通信, 比如说外部的 Activity 想让自己持有的某个 Fragment 对象执行一些方法,

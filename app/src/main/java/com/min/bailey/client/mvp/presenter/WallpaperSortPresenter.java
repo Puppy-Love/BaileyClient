@@ -2,26 +2,25 @@ package com.min.bailey.client.mvp.presenter;
 
 import android.app.Application;
 
-import com.jess.arms.integration.AppManager;
 import com.jess.arms.di.scope.ActivityScope;
-import com.jess.arms.mvp.BasePresenter;
 import com.jess.arms.http.imageloader.ImageLoader;
+import com.jess.arms.integration.AppManager;
+import com.jess.arms.mvp.BasePresenter;
+import com.jess.arms.utils.RxLifecycleUtils;
+import com.min.bailey.client.app.data.entity.WallpaperSortData;
+import com.min.bailey.client.app.utils.RxUtils;
+import com.min.bailey.client.mvp.contract.WallpaperSortContract;
+import com.min.bailey.client.mvp.ui.adapter.WallpaperSortAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.inject.Inject;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import me.jessyan.rxerrorhandler.core.RxErrorHandler;
 import me.jessyan.rxerrorhandler.handler.ErrorHandleSubscriber;
 import me.jessyan.rxerrorhandler.handler.RetryWithDelay;
-
-import javax.inject.Inject;
-
-import com.jess.arms.utils.RxLifecycleUtils;
-import com.min.bailey.client.app.data.entity.WallpaperSortData;
-import com.min.bailey.client.mvp.contract.WallpaperSortContract;
-import com.min.bailey.client.mvp.ui.adapter.MeiZhiAdapter;
-import com.min.bailey.client.mvp.ui.adapter.WallpaperSortAdapter;
-
-import java.util.ArrayList;
-import java.util.List;
 
 
 /**
@@ -64,11 +63,7 @@ public class WallpaperSortPresenter extends BasePresenter<WallpaperSortContract.
     public void getSort() {
         mModel.getSort(false, 1)
                 .retryWhen(new RetryWithDelay(3, 2))
-                .doOnSubscribe(disposable -> mRootView.showLoading())
-                .subscribeOn(AndroidSchedulers.mainThread())
-                .observeOn(AndroidSchedulers.mainThread())
-                .doFinally(() -> mRootView.hideLoading())
-                .compose(RxLifecycleUtils.bindToLifecycle(mRootView))
+                .compose(RxUtils.applySchedulers(mRootView))
                 .subscribe(new ErrorHandleSubscriber<WallpaperSortData>(mErrorHandler) {
                     @Override
                     public void onNext(WallpaperSortData data) {
@@ -87,4 +82,5 @@ public class WallpaperSortPresenter extends BasePresenter<WallpaperSortContract.
         this.mImageLoader = null;
         this.mApplication = null;
     }
+
 }

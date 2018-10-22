@@ -14,6 +14,9 @@ import javax.inject.Inject;
 import com.min.bailey.client.mvp.contract.WelfareContract;
 
 
+/**
+ * @author zhangmin
+ */
 @ActivityScope
 public class WelfarePresenter extends BasePresenter<WelfareContract.Model, WelfareContract.View> {
     @Inject

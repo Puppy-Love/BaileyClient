@@ -1,24 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    android:orientation="vertical">
-
+    android:fitsSystemWindows="true">
 
     <com.qmuiteam.qmui.widget.QMUIAppBarLayout
         android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <com.qmuiteam.qmui.widget.QMUITopBar
-            android:id="@+id/top_bar"
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:visibility="gone"
-            android:layout_height="?attr/qmui_topbar_height"
-            app:qmui_topbar_bg_color="@color/white" />
+            android:layout_height="?attr/actionBarSize"
+            app:layout_scrollFlags="scroll|enterAlways|snap"/>
+
+            <!--<TextView-->
+                <!--android:id="@+id/toolbar_title"-->
+                <!--style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center" />-->
+
+        <!--</android.support.v7.widget.Toolbar>-->
 
         <com.qmuiteam.qmui.widget.QMUITabSegment
             android:id="@+id/tabSegment"
@@ -36,4 +41,4 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-</LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

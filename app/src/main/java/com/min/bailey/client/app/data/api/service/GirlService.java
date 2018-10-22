@@ -36,12 +36,13 @@ public interface GirlService {
                                                @Query("order") String order);
 
     /**
-     * @param adult 布尔值，暂时未知
-     * @param first 数字，如1
+     * @param adult
+     * @param first
      * @return
      */
     @Headers({DOMAIN_NAME_HEADER + WALLPAPER_DOMAIN_NAME})
     @GET("/v1/vertical/category")
     Observable<WallpaperSortData> getWallpaperSort(@Query("adult") boolean adult,
                                                    @Query("first") int first);
+
 }

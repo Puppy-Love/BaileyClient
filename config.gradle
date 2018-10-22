@@ -53,13 +53,14 @@ ext {
                 "nineoldandroids"          : "com.nineoldandroids:library:2.4.0",
                 "paginate"                 : "com.github.markomilos:paginate:0.5.1",
                 "vlayout"                  : "com.alibaba.android:vlayout:1.1.0@aar",
-                "qmui"                     : "com.qmuiteam:qmui:1.1.0",
+                "qmui"                     : "com.qmuiteam:qmui:1.1.7",
                 "utilCode"                 : "com.blankj:utilcode:1.13.5",
                 "adapterHelper"            : "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.36",
                 "album"                    : "com.yanzhenjie:album:2.0.2",
                 "durban"                   : "com.yanzhenjie:durban:1.0.1",
                 "pickerView"               : "com.contrarywind:Android-PickerView:4.1.2",
                 "lombok"                   : "org.projectlombok:lombok:1.16.20",
+                "lottie"                    : "com.airbnb.android:lottie:2.5.5",
 
                 //rx1
                 "rxandroid"                : "io.reactivex:rxandroid:1.2.1",

@@ -11,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.jess.arms.base.BaseFragment;
 import com.jess.arms.di.component.AppComponent;
@@ -20,11 +21,11 @@ import com.min.bailey.client.di.component.DaggerWelfareComponent;
 import com.min.bailey.client.di.module.WelfareModule;
 import com.min.bailey.client.mvp.contract.WelfareContract;
 import com.min.bailey.client.mvp.presenter.WelfarePresenter;
+import com.min.bailey.client.mvp.ui.activity.MainActivity;
 import com.min.bailey.client.mvp.ui.adapter.TabFragmentAdapter;
 import com.qmuiteam.qmui.util.QMUIDisplayHelper;
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
 import com.qmuiteam.qmui.widget.QMUITabSegment;
-import com.qmuiteam.qmui.widget.QMUITopBar;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -40,14 +41,14 @@ import static com.jess.arms.utils.Preconditions.checkNotNull;
  */
 public class WelfareFragment extends BaseFragment<WelfarePresenter> implements WelfareContract.View {
 
-    @BindView(R.id.top_bar)
-    QMUITopBar mTopBar;
     @BindView(R.id.pager)
     ViewPager mViewPager;
-    Unbinder unbinder;
     @BindView(R.id.tabSegment)
     QMUITabSegment mTabLayout;
-
+    @BindView(R.id.toolbar)
+    Toolbar mToolbar;
+//    @BindView(R.id.toolbar_title)
+//    TextView mToolbarTitle;
 
     public static WelfareFragment newInstance() {
         WelfareFragment fragment = new WelfareFragment();
@@ -74,12 +75,14 @@ public class WelfareFragment extends BaseFragment<WelfarePresenter> implements W
         super.onCreate(savedInstanceState);
         isCreated = true;
     }
+
     @Override
     public void initData(@Nullable Bundle savedInstanceState) {
         // 沉浸式状态栏
         initTopBar();
         initTabAndPager();
     }
+
     protected boolean isCreated = false;
 
     /**
@@ -91,7 +94,6 @@ public class WelfareFragment extends BaseFragment<WelfarePresenter> implements W
         if (!isCreated) {
             return;
         }
-
         if (isVisibleToUser) {
             // 沉浸式状态栏
             QMUIStatusBarHelper.translucent(getActivity());
@@ -101,14 +103,15 @@ public class WelfareFragment extends BaseFragment<WelfarePresenter> implements W
     }
 
     private void initTopBar() {
-        mTopBar.setTitle("福利");
-        mTopBar.setBackgroundDividerEnabled(false);
+//        mToolbarTitle.setText("福利");
+        mToolbar.setTitle("福利");
+        ((MainActivity) getActivity()).initDrawer(mToolbar);
     }
 
     private void initTabAndPager() {
         mViewPager.setAdapter(new TabFragmentAdapter(getChildFragmentManager()));
         mViewPager.setCurrentItem(0, true);
-        mViewPager.setOffscreenPageLimit(2);
+        mViewPager.setOffscreenPageLimit(3);
         int space = QMUIDisplayHelper.dp2px(getContext(), 16);
         mTabLayout.setHasIndicator(true);
         mTabLayout.setMode(QMUITabSegment.MODE_FIXED);
@@ -187,16 +190,8 @@ public class WelfareFragment extends BaseFragment<WelfarePresenter> implements W
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // TODO: inflate a fragment view
-        View rootView = super.onCreateView(inflater, container, savedInstanceState);
-        unbinder = ButterKnife.bind(this, rootView);
-        return rootView;
-    }
-
-    @Override
     public void onDestroyView() {
         super.onDestroyView();
-        unbinder.unbind();
     }
+
 }

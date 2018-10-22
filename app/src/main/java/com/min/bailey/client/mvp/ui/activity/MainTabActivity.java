@@ -101,8 +101,6 @@ public class MainTabActivity extends BaseActivity<MainTabPresenter> implements M
     }
 
 
-
-
     /**
      * 初始化Tab
      */

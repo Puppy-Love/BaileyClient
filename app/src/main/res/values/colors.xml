@@ -52,6 +52,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="common_pressed">#20000000</color>  <!--白色背景按下去的颜色-->
     <color name="line">#e8e8e8</color>
+    <color name="colorGray">#f6f4f4</color>
 
 
 
