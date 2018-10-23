@@ -47,6 +47,8 @@ public class WelfareFragment extends BaseFragment<WelfarePresenter> implements W
     QMUITabSegment mTabLayout;
     @BindView(R.id.toolbar)
     Toolbar mToolbar;
+    @BindView(R.id.toolbar_title)
+    TextView mToolbarTitle;
 //    @BindView(R.id.toolbar_title)
 //    TextView mToolbarTitle;
 
@@ -97,14 +99,14 @@ public class WelfareFragment extends BaseFragment<WelfarePresenter> implements W
         if (isVisibleToUser) {
             // 沉浸式状态栏
             QMUIStatusBarHelper.translucent(getActivity());
-            QMUIStatusBarHelper.setStatusBarLightMode(getActivity());
+            QMUIStatusBarHelper.setStatusBarDarkMode(getActivity());
 
         }
     }
 
     private void initTopBar() {
-//        mToolbarTitle.setText("福利");
-        mToolbar.setTitle("福利");
+        mToolbarTitle.setText("福利");
+//        mToolbar.setTitle("福利
         ((MainActivity) getActivity()).initDrawer(mToolbar);
     }
 

@@ -22,7 +22,6 @@ import com.min.bailey.client.di.module.WeatherModule;
 import com.min.bailey.client.mvp.contract.WeatherContract;
 import com.min.bailey.client.mvp.presenter.WeatherPresenter;
 import com.min.bailey.client.mvp.ui.activity.MainActivity;
-import com.min.bailey.client.mvp.ui.widget.weather.dynamic.DynamicWeatherView;
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
 
 import butterknife.BindView;
@@ -39,8 +38,6 @@ import static com.jess.arms.utils.Preconditions.checkNotNull;
  */
 public class WeatherFragment extends BaseFragment<WeatherPresenter> implements WeatherContract.View {
 
-    @BindView(R.id.dynamicWeather)
-    DynamicWeatherView mDynamicWeather;
     @BindView(R.id.weatherViewPager)
     ViewPager mViewPager;
     @BindView(R.id.toolbar)
@@ -91,7 +88,7 @@ public class WeatherFragment extends BaseFragment<WeatherPresenter> implements W
         }
         if (isVisibleToUser) {
             // 沉浸式状态栏
-            QMUIStatusBarHelper.translucent(getActivity(),ArmsUtils.getColor(getContext(),R.color.qmui_config_color_blue));
+            QMUIStatusBarHelper.translucent(getActivity());
             QMUIStatusBarHelper.setStatusBarLightMode(getActivity());
         }
     }

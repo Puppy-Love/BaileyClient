@@ -6,22 +6,6 @@
     android:fitsSystemWindows="true"
     android:orientation="vertical">
 
-    <com.min.bailey.client.mvp.ui.widget.weather.WeatherLinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <com.min.bailey.client.mvp.ui.widget.weather.dynamic.DynamicWeatherView
-            android:id="@+id/dynamicWeather"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-
-
-    </com.min.bailey.client.mvp.ui.widget.weather.WeatherLinearLayout>
-
     <android.support.v4.view.ViewPager
         android:id="@+id/weatherViewPager"
         android:layout_width="match_parent"
