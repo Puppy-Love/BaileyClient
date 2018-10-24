@@ -46,10 +46,7 @@ public class MeiZhiFragment extends BaseFragment<MeiZhiPresenter>
     @BindView(R.id.mei_zhi_refresh)
     SwipeRefreshLayout mRefresh;
     Unbinder unbinder;
-//    /**
-//     * 是否创建
-//     */
-//    protected boolean isCreated = false;
+
 
 
     public static MeiZhiFragment newInstance() {
@@ -66,31 +63,6 @@ public class MeiZhiFragment extends BaseFragment<MeiZhiPresenter>
                 .build()
                 .inject(this);
     }
-//
-//    @Override
-//    public void onCreate(@Nullable Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        isCreated = true;
-//    }
-
-
-//    /**
-//     * @param isVisibleToUser
-//     */
-//    @Override
-//    public void setUserVisibleHint(boolean isVisibleToUser) {
-//        super.setUserVisibleHint(isVisibleToUser);
-//        if (!isCreated) {
-//            return;
-//        }
-//
-//        if (isVisibleToUser) {
-//            // 沉浸式状态栏
-//            QMUIStatusBarHelper.translucent(getActivity());
-//            QMUIStatusBarHelper.setStatusBarLightMode(getActivity());
-//
-//        }
-//    }
 
     @Override
     public View initView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

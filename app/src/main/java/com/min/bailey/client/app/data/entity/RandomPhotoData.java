@@ -61,7 +61,7 @@ public class RandomPhotoData implements Serializable {
 
         @Getter
         @Setter
-        public static class VerticalBean {
+        public static class VerticalBean implements Serializable{
 
             @SerializedName("preview")
             private String mPreview;

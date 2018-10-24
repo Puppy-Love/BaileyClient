@@ -26,6 +26,7 @@ import com.min.bailey.client.mvp.ui.adapter.TabFragmentAdapter;
 import com.qmuiteam.qmui.util.QMUIDisplayHelper;
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
 import com.qmuiteam.qmui.widget.QMUITabSegment;
+import com.qmuiteam.qmui.widget.QMUIViewPager;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -42,15 +43,13 @@ import static com.jess.arms.utils.Preconditions.checkNotNull;
 public class WelfareFragment extends BaseFragment<WelfarePresenter> implements WelfareContract.View {
 
     @BindView(R.id.pager)
-    ViewPager mViewPager;
+    QMUIViewPager mViewPager;
     @BindView(R.id.tabSegment)
     QMUITabSegment mTabLayout;
     @BindView(R.id.toolbar)
     Toolbar mToolbar;
     @BindView(R.id.toolbar_title)
     TextView mToolbarTitle;
-//    @BindView(R.id.toolbar_title)
-//    TextView mToolbarTitle;
 
     public static WelfareFragment newInstance() {
         WelfareFragment fragment = new WelfareFragment();
@@ -106,7 +105,6 @@ public class WelfareFragment extends BaseFragment<WelfarePresenter> implements W
 
     private void initTopBar() {
         mToolbarTitle.setText("福利");
-//        mToolbar.setTitle("福利
         ((MainActivity) getActivity()).initDrawer(mToolbar);
     }
 

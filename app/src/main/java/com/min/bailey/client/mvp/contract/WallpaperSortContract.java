@@ -26,6 +26,8 @@ public interface WallpaperSortContract {
         /**
          * 获取壁纸分类
          *
+         * @param adult
+         * @param first
          * @return
          */
         Observable<WallpaperSortData> getSort(boolean adult, int first);

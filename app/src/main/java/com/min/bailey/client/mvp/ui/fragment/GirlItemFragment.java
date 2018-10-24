@@ -26,6 +26,7 @@ import com.min.bailey.client.di.module.GirlItemModule;
 import com.min.bailey.client.mvp.contract.GirlItemContract;
 import com.min.bailey.client.mvp.presenter.GirlItemPresenter;
 import com.min.bailey.client.mvp.ui.adapter.GirlItemAdapter;
+import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -169,15 +170,6 @@ public class GirlItemFragment extends BaseFragment<GirlItemPresenter>
 
     @Override
     public void setAdapter(GirlItemAdapter adapter) {
-        initRecyclerView();
-        adapter.setOnLoadMoreListener(this, mRecyclerView);
-        mRecyclerView.setAdapter(adapter);
-    }
-
-    /**
-     * @describe 初始化recyclerView
-     */
-    private void initRecyclerView() {
         mRefresh.setOnRefreshListener(this);
         mRefresh.setColorSchemeColors(Color.rgb(47, 233, 189));
 //        ((SimpleItemAnimator) mRecyclerView.getItemAnimator()).setSupportsChangeAnimations(false);
@@ -185,6 +177,8 @@ public class GirlItemFragment extends BaseFragment<GirlItemPresenter>
         //可防止Item切换
         layoutManager.setGapStrategy(StaggeredGridLayoutManager.GAP_HANDLING_NONE);
         mRecyclerView.setLayoutManager(layoutManager);
+        adapter.setOnLoadMoreListener(this, mRecyclerView);
+        mRecyclerView.setAdapter(adapter);
     }
 
     @Override

@@ -1,12 +1,7 @@
 package com.min.bailey.client.app.data.entity;
 
-import com.min.bailey.client.app.data.api.Api;
-import com.min.bailey.client.app.data.api.Constant;
-import com.min.bailey.client.app.tag.MainTag;
-import com.min.bailey.client.app.tag.Tag;
 import com.google.gson.annotations.SerializedName;
-
-import org.simple.eventbus.EventBus;
+import com.min.bailey.client.app.data.api.Api;
 
 import lombok.Getter;
 import lombok.Setter;
