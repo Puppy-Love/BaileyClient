@@ -1,20 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     android:orientation="vertical">
 
+    <com.qmuiteam.qmui.widget.QMUITopBar
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/qmui_topbar_height"
+        android:fitsSystemWindows="true"
+        app:qmui_layout_collapseMode="pin"
+        app:qmui_topbar_bg_color="@color/white"
+        app:qmui_topbar_need_separator="false" />
+
     <android.support.v4.widget.SwipeRefreshLayout
-        android:id="@+id/girl_item_refresh"
+        android:id="@+id/refresh"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/girl_item_recycler"
+            android:id="@+id/rv_wallpaper"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:overScrollMode="never"
             android:scrollbars="vertical" />
-
     </android.support.v4.widget.SwipeRefreshLayout>
 </LinearLayout>

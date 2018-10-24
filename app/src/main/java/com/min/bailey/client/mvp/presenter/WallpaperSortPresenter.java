@@ -1,15 +1,18 @@
 package com.min.bailey.client.mvp.presenter;
 
 import android.app.Application;
+import android.content.Intent;
 
 import com.jess.arms.di.scope.ActivityScope;
 import com.jess.arms.http.imageloader.ImageLoader;
 import com.jess.arms.integration.AppManager;
 import com.jess.arms.mvp.BasePresenter;
+import com.jess.arms.utils.ArmsUtils;
 import com.jess.arms.utils.RxLifecycleUtils;
 import com.min.bailey.client.app.data.entity.WallpaperSortData;
 import com.min.bailey.client.app.utils.RxUtils;
 import com.min.bailey.client.mvp.contract.WallpaperSortContract;
+import com.min.bailey.client.mvp.ui.activity.WallpaperActivity;
 import com.min.bailey.client.mvp.ui.adapter.WallpaperSortAdapter;
 
 import java.util.ArrayList;
@@ -45,7 +48,6 @@ public class WallpaperSortPresenter extends BasePresenter<WallpaperSortContract.
         super(model, rootView);
     }
 
-
     /**
      * 初始化适配器
      */
@@ -55,7 +57,10 @@ public class WallpaperSortPresenter extends BasePresenter<WallpaperSortContract.
             mRootView.setAdapter(mAdapter);
             // 点击进入详细页面
             mAdapter.setOnItemClickListener((adapter, view, position) -> {
-
+                WallpaperSortData.ResBean.CategoryBean data = (WallpaperSortData.ResBean.CategoryBean) adapter.getData().get(position);
+                mRootView.launchActivity(new Intent(mApplication, WallpaperActivity.class)
+                        .putExtra("id", data.getId())
+                        .putExtra("name", data.getName()));
             });
         }
     }

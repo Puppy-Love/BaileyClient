@@ -7,25 +7,19 @@ import com.jess.arms.di.scope.ActivityScope;
 import com.jess.arms.mvp.BasePresenter;
 import com.jess.arms.http.imageloader.ImageLoader;
 
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.schedulers.Schedulers;
 import me.jessyan.rxerrorhandler.core.RxErrorHandler;
 import me.jessyan.rxerrorhandler.handler.ErrorHandleSubscriber;
-import me.jessyan.rxerrorhandler.handler.RetryWithDelay;
 
 import javax.inject.Inject;
 
-import com.jess.arms.utils.RxLifecycleUtils;
 import com.min.bailey.client.app.data.entity.RandomPhotoData;
-import com.min.bailey.client.mvp.contract.GirlItemContract;
+import com.min.bailey.client.app.utils.RxUtils;
+import com.min.bailey.client.mvp.contract.WallpaperContract;
 import com.min.bailey.client.mvp.ui.adapter.GirlItemAdapter;
-
-import java.util.ArrayList;
-import java.util.List;
 
 
 @ActivityScope
-public class GirlItemPresenter extends BasePresenter<GirlItemContract.Model, GirlItemContract.View> {
+public class WallpaperPresenter extends BasePresenter<WallpaperContract.Model, WallpaperContract.View> {
     @Inject
     RxErrorHandler mErrorHandler;
     @Inject
@@ -34,13 +28,11 @@ public class GirlItemPresenter extends BasePresenter<GirlItemContract.Model, Gir
     ImageLoader mImageLoader;
     @Inject
     AppManager mAppManager;
-
     private GirlItemAdapter mAdapter;
-    private int skip = 0;
     private String order;
 
     @Inject
-    public GirlItemPresenter(GirlItemContract.Model model, GirlItemContract.View rootView) {
+    public WallpaperPresenter(WallpaperContract.Model model, WallpaperContract.View rootView) {
         super(model, rootView);
     }
 
@@ -58,28 +50,14 @@ public class GirlItemPresenter extends BasePresenter<GirlItemContract.Model, Gir
         }
     }
 
-    /**
-     * 获取豆瓣美女
-     *
-     * @param refresh
-     * @param cid
-     */
-    public void getDouBanGirl(boolean refresh) {
+    public void getWallpaperBySort(boolean refresh, String id) {
         if (refresh) {
-            skip = 0;
             order = "new";
         } else {
             order = "hot";
-            skip = skip + 10;
         }
-        mModel.getRandomPhoto(30, 1, skip, order, true)
-                .subscribeOn(Schedulers.io())
-                .retryWhen(new RetryWithDelay(3, 2))
-                .doOnSubscribe(disposable -> mRootView.showLoading())
-                .subscribeOn(AndroidSchedulers.mainThread())
-                .observeOn(AndroidSchedulers.mainThread())
-                .doFinally(() -> mRootView.hideLoading())
-                .compose(RxLifecycleUtils.bindToLifecycle(mRootView))
+        mModel.getWallpaperBySort(id, 30, true, 1, order)
+                .compose(RxUtils.applySchedulers(mRootView))
                 .subscribe(new ErrorHandleSubscriber<RandomPhotoData>(mErrorHandler) {
                     @Override
                     public void onNext(RandomPhotoData data) {
@@ -102,7 +80,6 @@ public class GirlItemPresenter extends BasePresenter<GirlItemContract.Model, Gir
                     }
                 });
     }
-
 
     @Override
     public void onDestroy() {
