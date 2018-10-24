@@ -50,8 +50,6 @@ public class WelfareFragment extends BaseFragment<WelfarePresenter> implements W
     Toolbar mToolbar;
     @BindView(R.id.toolbar_title)
     TextView mToolbarTitle;
-//    @BindView(R.id.toolbar_title)
-//    TextView mToolbarTitle;
 
     public static WelfareFragment newInstance() {
         WelfareFragment fragment = new WelfareFragment();
@@ -97,12 +95,12 @@ public class WelfareFragment extends BaseFragment<WelfarePresenter> implements W
         if (!isCreated) {
             return;
         }
-//        if (isVisibleToUser) {
-//            // 沉浸式状态栏
-//            QMUIStatusBarHelper.translucent(getActivity());
-//            QMUIStatusBarHelper.setStatusBarDarkMode(getActivity());
-//
-//        }
+        if (isVisibleToUser) {
+            // 沉浸式状态栏
+            QMUIStatusBarHelper.translucent(getActivity());
+            QMUIStatusBarHelper.setStatusBarDarkMode(getActivity());
+
+        }
     }
 
     private void initTopBar() {

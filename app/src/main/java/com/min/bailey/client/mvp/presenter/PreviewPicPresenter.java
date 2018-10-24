@@ -2,6 +2,8 @@ package com.min.bailey.client.mvp.presenter;
 
 import android.app.Application;
 
+import com.github.chrisbanes.photoview.PhotoView;
+import com.jess.arms.http.imageloader.glide.ImageConfigImpl;
 import com.jess.arms.integration.AppManager;
 import com.jess.arms.di.scope.ActivityScope;
 import com.jess.arms.mvp.BasePresenter;
@@ -11,6 +13,7 @@ import me.jessyan.rxerrorhandler.core.RxErrorHandler;
 
 import javax.inject.Inject;
 
+import com.min.bailey.client.R;
 import com.min.bailey.client.mvp.contract.PreviewPicContract;
 
 
@@ -28,6 +31,17 @@ public class PreviewPicPresenter extends BasePresenter<PreviewPicContract.Model,
     @Inject
     public PreviewPicPresenter(PreviewPicContract.Model model, PreviewPicContract.View rootView) {
         super(model, rootView);
+    }
+
+    public void setImg(PhotoView photoView, String url) {
+        mImageLoader.loadImage(mApplication,
+                ImageConfigImpl
+                        .builder()
+                        .url(url)
+                        .cacheStrategy(0)
+                        .isCenterCrop(true)
+                        .imageView(photoView)
+                        .build());
     }
 
     @Override

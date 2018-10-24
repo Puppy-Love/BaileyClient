@@ -1,6 +1,7 @@
 package com.min.bailey.client.mvp.presenter;
 
 import android.app.Application;
+import android.content.Intent;
 
 import com.jess.arms.integration.AppManager;
 import com.jess.arms.di.scope.ActivityScope;
@@ -15,7 +16,10 @@ import javax.inject.Inject;
 import com.min.bailey.client.app.data.entity.RandomPhotoData;
 import com.min.bailey.client.app.utils.RxUtils;
 import com.min.bailey.client.mvp.contract.WallpaperContract;
+import com.min.bailey.client.mvp.ui.activity.PreviewPicActivity;
 import com.min.bailey.client.mvp.ui.adapter.GirlItemAdapter;
+
+import java.io.Serializable;
 
 
 @ActivityScope
@@ -45,7 +49,9 @@ public class WallpaperPresenter extends BasePresenter<WallpaperContract.Model, W
             mRootView.setAdapter(mAdapter);
             // 点击进入详细页面
             mAdapter.setOnItemClickListener((adapter, view, position) -> {
-
+                RandomPhotoData.ResBean.VerticalBean data = (RandomPhotoData.ResBean.VerticalBean) adapter.getData().get(position);
+                mRootView.launchActivity(new Intent(mApplication,PreviewPicActivity.class)
+                .putExtra("data", data));
             });
         }
     }
